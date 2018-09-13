@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Input from './Input/Input';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
           <li>When you click a CharComponent, it should be removed from the entered text.</li>
         </ol>
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
+        <Input />
       </div>
     );
   }
