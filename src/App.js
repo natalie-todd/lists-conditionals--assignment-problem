@@ -28,6 +28,7 @@ render() {
       type='text' 
       onChange={ this.inputChangedHandler } 
       value={ this.state.input }/>
+      <p>{ this.state.input }</p>
     </div>
   );
 }
