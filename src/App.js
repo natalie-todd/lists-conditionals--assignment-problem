@@ -4,13 +4,18 @@ import Input from './Input/Input';
 
 class App extends Component {
   state = {
+    id: 1,
     paragraph: ''
   }
 
   inputChangedHandler = (event) => {
+    const input = this.state.id;
 
+    input.name = event.target.value;
+
+    this.setState({ paragraph: input })
   }
-  }
+
   render() {
     return (
       <div className="App">
