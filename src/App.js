@@ -1,9 +1,31 @@
 import React, { Component } from 'react';
 import './App.css';
-import Input from './Input/Input';
+import Validation from './Validation/Validation';
+import Char from './Char/Char';
 
 class App extends Component {
+  state = {
+    input: ''
+  }
+
+  inputChangedHandler = (event) => {
+    this.setState({ input: event.target.value });
+  }
+
+  deleteCharHandler = (index) => {
+    const text = this.state.input.split('');
+    text.splice(index, 1);
+    const newText = text.join('');
+    this.setState({input: newText});
+  }
+
   render() {
+    const charList = this.state.input.split('').map((ch, index) => {
+      return <Char
+        character={ch}
+        key={index}
+        clicked={() => this.deleteCharHandler(index)} />;
+    });
     return (
       <div className="App">
         <ol>
@@ -15,7 +37,16 @@ class App extends Component {
           <li>When you click a CharComponent, it should be removed from the entered text.</li>
         </ol>
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
-        <Input />
+        <hr />
+        <input
+          type='text'
+          onChange={this.inputChangedHandler}
+          value={this.state.input}
+        />
+        <p>{this.state.input}</p>
+        <Validation
+          length={this.state.input.length} />
+        {charList}
       </div>
     );
   }
