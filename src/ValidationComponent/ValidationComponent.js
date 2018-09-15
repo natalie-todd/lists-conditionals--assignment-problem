@@ -1,14 +1,13 @@
 import React from 'react';
 
-import './Input.css';
+import './ValidationComponent.css';
 
-const input = (props) => {
+const ValidationComponent = (props) => {
     return (
-        <div className='Input'>            
-            <input type='text' onChange={props.changed} value={props.paragraph}/>
-            <p>{props.paragraph}</p>
+        <div className='ValidationComponent'>            
+            <p>{props.length}</p>
         </div>
     )
 };
 
-export default input; 
+export default ValidationComponent; 
