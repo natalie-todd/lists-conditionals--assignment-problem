@@ -3,6 +3,14 @@ import './App.css';
 import Input from './Input/Input';
 
 class App extends Component {
+  state = {
+    paragraph: ''
+  }
+
+  inputChangedHandler = (event) => {
+
+  }
+  }
   render() {
     return (
       <div className="App">
